@@ -40,8 +40,8 @@ $app->post('/validarFirma', function() use($app) {
   if ($hashGuardado==$hashDado)	{
   		$valido = True;
 
-  		return true;
-  		print "valido: " . True . "\r\n " . "mensaje: " . $string;   
+  		
+  		return "valido: " . True . "\r\n " . "mensaje: " . $string;   
 
   }
   else {
