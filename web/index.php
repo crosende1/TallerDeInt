@@ -25,7 +25,7 @@ $app->get('/', function() use($app) {
 
 $app->get('/status', function() use($app) {
   $code = (isset($GLOBALS['http_response_code']) ? $GLOBALS['http_response_code'] : 201);
-
+  return $code;
 
 }
 
