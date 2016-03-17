@@ -31,12 +31,12 @@ $app->post('/validarFirma', function() use($app) {
 
   if ($hashGuardado==$HashDado)	{
   		$iguales = true;
-  		return "valido: " . $iguales . "\r\n " "mensaje: " . $HashDado   
+  		return "valido: " . $iguales . "mensaje: " . $HashDado   
 
   }
   else {
 
-  	return "valido: " . $iguales . "\r\n " "mensaje: " . $HashDado 
+  	return "valido: " . $iguales . "mensaje: " . $HashDado 
   }
 
 
