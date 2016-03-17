@@ -79,7 +79,7 @@ $app->get('/texto', function() use($app) {
 $source = file_get_contents("https://s3.amazonaws.com/files.principal/texto.txt ");
 $sourceHashiado= hash( 'sha256', $source );
 
- if ($hashGuardado == NULL || $texto== NULL){
+ if ($source == NULL || $sourceHashiado== NULL){
 			return $app->json('Http 500', 500);
 
   }
