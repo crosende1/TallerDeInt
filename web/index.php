@@ -45,12 +45,17 @@ $app->post('/validarFirma', function() use($app) {
 
 
   if ($hashGuardado==$hashDado)	{
-  		$valido = True;
-		$unvalido = json_encode($valido, true);
-		$unstring = json_encode($string);
-		$miArray = array ("valido"=>$unvalido, "mensaje"=> $unstring);
+  		$d = array();
+  		$d[]=array('valido'=> $unvalido, 'mensaje'=>$unstring);
+  		$json=json_encode($d);
+  		return $json;
+  		
+  		//$valido = True;
+		//$unvalido = json_encode($valido, true);
+		//$unstring = json_encode($string);
+		//$miArray = array ("valido"=>$unvalido, "mensaje"=> $unstring);
 		
-		return $miArray;
+		//return $miArray;
         
   		
   		//return "valido: " . True . "\r\n " . "mensaje: " . $string;   
