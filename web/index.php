@@ -35,8 +35,6 @@ return $app->json('Http 201', 201);
 });
 
 
-
-
 $app->post('/validarFirma', function() use($app) {
   $string= $_REQUEST['mensaje'];
   $hashGuardado= hash( 'sha256', $string );
@@ -72,8 +70,30 @@ $app->post('/validarFirma', function() use($app) {
   }
 
 
+});
+// termina post
+
+
+$app->get('/texto', function() use($app) {
+
+$source = file_get_contents("https://s3.amazonaws.com/files.principal/texto.txt ");
+$sourceHashiado= hash( 'sha256', $source );
+
+ if ($hashGuardado == NULL || $texto== NULL){
+			return $app->json('Http 500', 500);
+
+  }
+
+  else {
+		$d=array('text'=> $source, 'hash'=>$sourceHashiado);
+  		$json=json_encode($d);
+  		return $json;
+  		
+
+  }
 
 
 });
+
 
 $app->run();
