@@ -22,4 +22,24 @@ $app->get('/', function() use($app) {
   return $app['twig']->render('index.twig');
 });
 
+$app->get('/validarFirma', function() use($app) {
+  $string= $_GET['mensaje'];
+  $hashGuardado= hash( 'sha256', $string );
+
+  $iguales= false;
+  $HashDado = $_GET['hash'];
+
+  if ($hashGuardado==$HashDado)	{
+  		$iguales = true;
+  		return "valido: " . $iguales . "\r\n " "mensaje: " . $HashDado   
+
+  }
+  else {
+
+  	return "valido: " . $iguales . "\r\n " "mensaje: " . $HashDado 
+  }
+
+
+});
+
 $app->run();
