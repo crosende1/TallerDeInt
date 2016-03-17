@@ -1,5 +1,7 @@
 <?php
 
+use Phalcon\Http\Response;
+
 require('../vendor/autoload.php');
 
 $app = new Silex\Application();
