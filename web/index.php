@@ -32,13 +32,12 @@ $app->post('/validarFirma', function() use($app) {
   if ($hashGuardado==$mensaje)	{
   		$valido = True;
 
-
-  		return "valido: " . $valido . "\r\n " . "mensaje: " . $mensaje;   
+  		return "valido: " . True . "\r\n " . "mensaje: " . $mensaje;   
 
   }
   else {
 
-  	return "valido: " . $valido . "\r\n " . "mensaje: " . $mensaje; 
+  	return "valido: " . False . "\r\n " . "mensaje: " . $mensaje; 
   	
   }
 
