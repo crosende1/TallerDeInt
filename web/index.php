@@ -41,17 +41,16 @@ $app->post('/validarFirma', function() use($app) {
   if ($hashGuardado==$hashDado)	{
   		//$valido = True;
 		
-		$a = array(
-        array('valido: ' => True),
-        array('mensaje: ' => $string));
-		echo $json = json_encode($a);
+		$miArray = array ($valido, $string);
+		return (json_encode($miArray));
+        
   		
   		//return "valido: " . True . "\r\n " . "mensaje: " . $string;   
 
   }
   else {
 
-  	return "valido: " . False . "\r\n " . "mensaje: " . $string; 
+  	return "valido: " ;
   	
   }
 
