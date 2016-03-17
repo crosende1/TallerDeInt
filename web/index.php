@@ -54,21 +54,12 @@ $app->post('/validarFirma', function() use($app) {
   		$json=json_encode($d);
   		return $json;
   		
-  		//$valido = True;
-		//$unvalido = json_encode($valido, true);
-		//$unstring = json_encode($string);
-		//$miArray = array ("valido"=>$unvalido, "mensaje"=> $unstring);
-		
-		//return $miArray;
-        
-  		
-  		//return "valido: " . True . "\r\n " . "mensaje: " . $string;   
 
   }
   else {
 
 
-  		//$d = array();
+  		
   		$d=array('valido'=> $valido, 'mensaje'=>$string);
   		$json=json_encode($d);
   		return $json;
