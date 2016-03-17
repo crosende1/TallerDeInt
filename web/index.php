@@ -22,6 +22,34 @@ $app->get('/', function() use($app) {
   return $app['twig']->render('index.twig');
 });
 
+
+$app->get('/status', function() use($app) {
+ 	var_dump(http_response_code(201));
+
+
+}
+
+
+
+
+      
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 $app->post('/validarFirma', function() use($app) {
   $string= $_REQUEST['mensaje'];
   $hashGuardado= hash( 'sha256', $string );
