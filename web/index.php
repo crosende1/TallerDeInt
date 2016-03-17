@@ -28,6 +28,7 @@ $app->get('/', function() use($app) {
 
 $app->get('/status', function() use($app) {
  
+return $app->json('Http 201', 201);
 
 
 
