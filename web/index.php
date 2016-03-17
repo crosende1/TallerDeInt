@@ -25,7 +25,7 @@ $app->get('/', function() use($app) {
 
 $app->get('/status', function() use($app) {
 
-header (' ', true, 201);
+
 
 }
 
