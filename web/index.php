@@ -33,6 +33,8 @@ $app->get('/status', function() use($app) {
 $app->post('/validarFirma', function() use($app) {
   $string= $_REQUEST['mensaje'];
   $hashGuardado= hash( 'sha256', $string );
+  $hashGuardado2=strtolower($hashGuardado);
+  $hashDado2=strtolower($hashDado);
 
   $valido= false;
   $hashDado = $_REQUEST['hash'];
@@ -44,7 +46,7 @@ $app->post('/validarFirma', function() use($app) {
   }
 
 
-  if ($hashGuardado==$hashDado)	{
+  if ($hashGuardado2==$hashDado2)	{
   		$valido=true;
   		//$d = array();
   		$d=array('valido'=> $valido, 'mensaje'=>$string);
