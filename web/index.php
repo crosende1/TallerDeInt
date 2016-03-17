@@ -29,7 +29,7 @@ $app->get('/', function() use($app) {
 $app->get('/status', function() use($app) {
  
 
- return new Response('', 201);
+
 
 });
 
@@ -48,7 +48,7 @@ $app->post('/validarFirma', function() use($app) {
 
 
   if ($string == NULL || $hashDado== NULL){
-
+			$app->json('Http 400', 400);
 
   }
 
