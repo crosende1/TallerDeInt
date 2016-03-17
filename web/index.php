@@ -26,28 +26,9 @@ $app->get('/', function() use($app) {
 $app->get('/status', function() use($app) {
  	$a=http_response_code(201);
  	var_dump($a);
-
+ 	return $a;
 
 }
-
-
-
-
-      
-      
-    
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
