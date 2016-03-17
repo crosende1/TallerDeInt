@@ -34,10 +34,11 @@ $app->post('/validarFirma', function() use($app) {
   $string= $_REQUEST['mensaje'];
   $hashGuardado= hash( 'sha256', $string );
   $hashGuardado2=strtolower($hashGuardado);
+  $hashDado = $_REQUEST['hash'];
   $hashDado2=strtolower($hashDado);
 
   $valido= false;
-  $hashDado = $_REQUEST['hash'];
+ 
 
 
   if ($string == NULL || $hashDado== NULL){
@@ -46,7 +47,7 @@ $app->post('/validarFirma', function() use($app) {
   }
 
 
-  if ($hashGuardado2==$hashDado2)	{
+  if ($hashGuardado2 == $hashDado2)	{
   		$valido=true;
   		//$d = array();
   		$d=array('valido'=> $valido, 'mensaje'=>$string);
