@@ -66,7 +66,12 @@ $app->post('/validarFirma', function() use($app) {
   }
   else {
 
-  	return "valido: " ;
+
+  		//$d = array();
+  		$d=array('valido'=> $valido, 'mensaje'=>$string);
+  		$json=json_encode($d);
+  		return $json;
+  	
   	
   }
 
