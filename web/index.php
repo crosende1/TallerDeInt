@@ -26,19 +26,19 @@ $app->post('/validarFirma', function() use($app) {
   $string= $_GET['mensaje'];
   $hashGuardado= hash( 'sha256', $string );
 
-  $iguales= false;
-  $HashDado = $_GET['hash'];
+  $valido= false;
+  $mensaje = $_GET['hash'];
 
-  if ($hashGuardado==$HashDado)	{
-  		$iguales = True;
-  		
+  if ($hashGuardado==$mensaje)	{
+  		$valido = True;
 
-  		return "valido: " . $iguales . "\r\n " . "mensaje: " . $HashDado;   
+
+  		return "valido: " . $valido . "\r\n " . "mensaje: " . $mensaje;   
 
   }
   else {
 
-  	return "valido: " . $iguales . "\r\n " . "mensaje: " . $HashDado; 
+  	return "valido: " . $valido . "\r\n " . "mensaje: " . $mensaje; 
   	
   }
 
