@@ -26,6 +26,7 @@ $app->get('/', function() use($app) {
 $app->get('/status', function() use($app) {
 
 header (' ', true, 201);
+
 }
 
 
@@ -38,10 +39,14 @@ $app->post('/validarFirma', function() use($app) {
   $hashDado = $_REQUEST['hash'];
 
   if ($hashGuardado==$hashDado)	{
-  		$valido = True;
-
+  		//$valido = True;
+		
+		$a = array(
+        array('valido: ' => True),
+        array('mensaje: ' => $string));
+		$json = json_encode($a);
   		
-  		return "valido: " . True . "\r\n " . "mensaje: " . $string;   
+  		//return "valido: " . True . "\r\n " . "mensaje: " . $string;   
 
   }
   else {
@@ -49,6 +54,8 @@ $app->post('/validarFirma', function() use($app) {
   	return "valido: " . False . "\r\n " . "mensaje: " . $string; 
   	
   }
+
+
 
 
 });
