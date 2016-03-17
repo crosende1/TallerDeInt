@@ -35,11 +35,11 @@ $app->post('/validarFirma', function() use($app) {
   $string= $_REQUEST['mensaje'];
   $hashGuardado= hash( 'sha256', $string );
 
-  $valido= False;
+  $valido= false;
   $hashDado = $_REQUEST['hash'];
 
   if ($hashGuardado==$hashDado)	{
-  		//$valido = True;
+  		$valido = True;
 		
 		$miArray = array ("valido"=>$valido, "mensaje"=> $string);
 		return (json_encode($miArray));
