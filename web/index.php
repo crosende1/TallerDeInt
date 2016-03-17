@@ -25,9 +25,8 @@ $app->get('/', function() use($app) {
 
 $app->get('/status', function() use($app) {
 
-$this->response->statusCode(201);
-return $this->response;
 
+mixed http_response_code ([ int 201])
 }
 
 
