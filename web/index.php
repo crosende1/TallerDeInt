@@ -25,7 +25,8 @@ $app->get('/', function() use($app) {
 $app->get('/status', function() use($app) {
  
 $response = new \Phalcon\Http\Response();
-$response->setStatusCode(201);
+//$response->setStatusCode(201);
+$response->setJsonContent(setStatusCode(201));
 $response->send();
 
 });
