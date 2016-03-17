@@ -24,7 +24,10 @@ $app->get('/', function() use($app) {
 
 $app->get('/status', function() use($app) {
  
-
+$response = new \Phalcon\Http\Response();
+$response->setStatusCode(201);
+$response->send();
+return $response;
 });
 
 
@@ -58,12 +61,9 @@ $app->post('/validarFirma', function() use($app) {
   }
   else {
 
-
-  		
   		$d=array('valido'=> $valido, 'mensaje'=>$string);
   		$json=json_encode($d);
   		return $json;
-  	
   	
   }
 
