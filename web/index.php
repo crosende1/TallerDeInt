@@ -48,7 +48,7 @@ $app->post('/validarFirma', function() use($app) {
 
 
   if ($string == NULL || $hashDado== NULL){
-			$app->json('Http 400', 400);
+			return $app->json('Http 400', 400);
 
   }
 
