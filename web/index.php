@@ -25,20 +25,8 @@ $app->get('/', function() use($app) {
 
 $app->get('/status', function() use($app) {
 
-if (!function_exists('http_response_code'))
-{
-    function http_response_code($newcode = NULL)
-    {
-        static $code = 201;
-          
-        return $code;
-    }
-}
-else{
-
-	$code=http_response_code(201);
-	return $code;
-}
+$this->response->statusCode(201);
+return $this->response;
 
 }
 
@@ -55,12 +43,12 @@ $app->post('/validarFirma', function() use($app) {
   		$valido = True;
 
   		return true;
-  		print "valido: " , True , "\r\n " . "mensaje: " . $string;   
+  		print "valido: " . True . "\r\n " . "mensaje: " . $string;   
 
   }
   else {
 
-  	return "valido: " , False , "\r\n " . "mensaje: " . $string; 
+  	return "valido: " . False . "\r\n " . "mensaje: " . $string; 
   	
   }
 
