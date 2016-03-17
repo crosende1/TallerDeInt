@@ -23,12 +23,6 @@ $app->get('/', function() use($app) {
 });
 
 
-$app->get('/status', function() use($app) {
-
-
-
-}
-
 
 
 $app->post('/validarFirma', function() use($app) {
@@ -42,7 +36,10 @@ $app->post('/validarFirma', function() use($app) {
   		$valido = True;
 		
 		$miArray = array ("valido"=>$valido, "mensaje"=> $string);
-		return (json_encode($miArray));
+		
+
+		$arrayArreglado= json_encode($miArray);
+		return $arrayArreglado;
         
   		
   		//return "valido: " . True . "\r\n " . "mensaje: " . $string;   
