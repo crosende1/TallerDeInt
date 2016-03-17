@@ -23,17 +23,17 @@ $app->get('/', function() use($app) {
 });
 
 $app->post('/validarFirma', function() use($app) {
-  $this->string= $this->mensaje($_GET);
+  $string= $_REQUEST['mensaje'];
   $hashGuardado= hash( 'sha256', $string );
 
   $valido= False;
-  $mensaje = $_GET['hash'];
+  $mensaje = $_REQUEST['hash'];
 
   if ($hashGuardado==$mensaje)	{
   		$valido = True;
 
 
-  		return "valido: " . $valido . "\r\n " . "mensaje: " . $mensaje . $string;   
+  		return "valido: " . $valido . "\r\n " . "mensaje: " . $mensaje;   
 
   }
   else {
