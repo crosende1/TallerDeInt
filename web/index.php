@@ -22,6 +22,11 @@ $app->get('/', function() use($app) {
   return $app['twig']->render('index.twig');
 });
 
+$app->get('/status', function() use($app) {
+ 
+
+});
+
 
 
 
@@ -32,14 +37,20 @@ $app->post('/validarFirma', function() use($app) {
   $valido= false;
   $hashDado = $_REQUEST['hash'];
 
+
+  if ($string == NULL || $hashDado== NULL){
+
+
+  }
+
+
   if ($hashGuardado==$hashDado)	{
   		$valido = True;
+		$unvalido = json_encode($valido, true);
+		$unstring = json_encode($string);
+		$miArray = array ("valido"=>$unvalido, "mensaje"=> $unstring);
 		
-		$miArray = array ("valido"=>$valido, "mensaje"=> $string);
-		
-
-		$arrayArreglado= json_encode($miArray);
-		return $arrayArreglado;
+		return $miArray;
         
   		
   		//return "valido: " . True . "\r\n " . "mensaje: " . $string;   
